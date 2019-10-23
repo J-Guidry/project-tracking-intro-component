@@ -1,0 +1,2 @@
+navIcon = document.querySelector("#nav");
+
