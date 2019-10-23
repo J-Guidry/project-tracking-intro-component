@@ -1,0 +1,61 @@
+body {
+    margin:0;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    background-image: url("./images/illustration-devices.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    position:relative;
+}
+
+header::after {
+    content: "";
+    background-color: rgb(238,243,240);
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    height: 50vh;
+    top: 0;
+    left: 0;
+    transform: translateX(50%);
+    border-radius: 0 0 0 35px;
+}
+.navigation {
+    position: relative;
+    z-index: 2;
+    display:none;
+}
+
+header img {
+    position: relative;
+    z-index: 3;
+}
+/*Tablet width */
+@media screen and (min-width: 530px) {
+    header {
+        background-size: cover;
+    }
+}
+
+/* Desktop width*/
+@media screen and (min-width: 950px) {
+    header {
+        float: right;
+        width: 50vw;
+    }
+
+}
