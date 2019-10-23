@@ -102,6 +102,31 @@ header img {
     position: absolute;
     width: 1px;
 }
+
+.cross {
+    height: 33px;
+    width: 33px;
+    position: absolute;
+    z-index: 3;
+    right: 15px;
+    top: 10px
+}
+.cross::after, .cross::before {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    width: 2px;
+    background-color: #333;
+    height: 33px;
+    width: 2px;
+}
+
+.cross::after {
+    transform: rotate(45deg);
+}
+.cross::before {
+    transform: rotate(-45deg);
+}
 /*Tablet width */
 /* @media screen and (min-width: 530px) {
     header {
