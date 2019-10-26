@@ -72,14 +72,24 @@ nav {
     box-shadow: 10px 10px 40px -13px rgba(0,0,0,0.75); 
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+    /* padding: 20px 40px; */
+    height: 100%;
+}
+
 hr {
-    text-align:center;
+    /* text-align:center; */
     width: 100%;
     color:hsl(231, 7%, 65%);
 }
 
-.navigation span li a{
+.navigation span a{
     color: hsl(231, 7%, 65%);
+    margin-left: 15px;
 }
 .logo {
     position: relative;
@@ -299,14 +309,28 @@ hr {
     .navigation {
         flex-direction: row;
         width: auto;
+        height: 30px;
+        margin: 0;
+        background-color: unset;
+        font-size: 1.0rem;
+    }
+
+    ul {
+        flex-direction: row;
+        width: auto;
         height: auto;
         margin: 0;
         background-color: unset;
         font-size: 1.0rem;
     }
 
-    .navigation li a {
+    hr {
+        margin: 0;
         padding: 0;
+    }
+
+    .navigation a {
+        padding: 20px;
     }
     hr {
         max-width: 1px;
