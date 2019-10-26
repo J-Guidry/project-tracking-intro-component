@@ -3,6 +3,8 @@ body {
     position: relative;
     font-family: 'Barlow', sans-serif;
     font-size: 18px;
+    max-width: 100%; 
+    overflow-x: hidden;
 }
 
 ul {
@@ -18,38 +20,28 @@ h1 {
     font-family: "Barlow-Condensed", sans-serif;
     text-transform: uppercase;
     font-size: 1.8rem; 
-}
-
-button {
-    text-decoration: none;
-    border:none;
-    padding: 10px 5px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-family: "Barlow-Condensed", sans-serif;
-    width: 48%;
+    color: hsl(230, 29%, 20%);
 }
 
 header {
     height: auto;
-    /* height: 50vh; */
     position:relative;
     width: 100%;
     margin-bottom: 60px;
+    
 }
 
 header::after {
     content: "";
     background-color: rgb(238,243,240);
     width: 100%;
-    position: absolute;
     z-index: -1;
-    height: auto;
-    top: 0;
-    left: 0;
-    transform: translateX(50%);
+    height: 390px;
     border-radius: 0 0 0 35px;
-    padding-bottom:380px;
+    max-width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 nav {
@@ -100,6 +92,8 @@ hr {
     height: auto;
     width: 100%;
     margin-top: 50px;
+    max-width: 100%;
+
 }
 .navigation a{
     padding-left: 90px;
@@ -166,7 +160,7 @@ hr {
 
 /*main section*/
 .project-tracking {
-    width: 85%;
+    width: 90%;
     margin:auto;
 }
 
@@ -174,59 +168,150 @@ hr {
     color: white;
     background: black;
     border-radius: 15px;
-    padding: 5px;
+    padding: 8px;
     font-weight: bolder;
+    display: inline-block;
 }
 
 .headline {
     text-transform:uppercase;
 }
 
-.sign-up button:first-child{
-    background: red; 
+.headline p {
+    letter-spacing: 2px;
+    color: hsl(230, 11%, 40%);
+}
+
+.paragraph {
+    color: hsl(230, 11%, 40%);
+}
+
+.schedule, .preview {
+    padding: 15px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display:inline-block;
+    text-align: center;
+    width: 40%;
 }
 
 .schedule {
     color: white;
+    background: red; 
     font-family: "Barlow-Condensed", sans-serif;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 5px;
 }
 
-.sign-up button:last-child{
-    background-color: white;
-}
 .preview {
     color: hsl(231, 7%, 65%);
     font-family: 'Barlow', sans-serif;
     letter-spacing: 1px;
+    background-color: white;
+    padding-left: 0;
+    font-size: 0.8rem;
 }
 
-/*Tablet width */
-@media screen and (min-width: 530px) and (max-width: 930px){
-    header {
-        /* background-size: cover;
-        height: 0;
-        padding: 0;
-        width: 100%;
-        padding-bottom: calc(100% * 3 / 4); */
-    }
-
-    .logo {
-        /* background-color: white; */
-        /* padding: 1px;  */
-    }
-
-    .nav-icon {
-        /* background-color: white; */
-        padding: 0;
+@media screen and (min-width: 320px) and (max-width: 360px){
+    .project-tracking {
+        text-align: center;
     }
 }
 
 /* Desktop width*/
-/* @media screen and (min-width: 950px) {
-    header {
-        float: right;
-        width: 50vw;
+@media screen and (min-width: 900px) {
+
+    body {
+        display: flex;
+        flex-direction: row-reverse;
     }
-} */
+    header {
+        width: 55vw;
+        margin-bottom: 0;
+    }
+
+    header::after {
+        transform: translateX(0);
+        height: 300px;
+        max-width: 100%;
+    }
+
+    .logo {
+        position: fixed;
+        top: 0;
+        left: 3%;
+    }
+
+    .project-tracking {
+        margin-top: 100px;
+        display: inline-block;
+        width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .headline p,
+    .headline h1 {
+        max-width: 90%;
+    }
+
+    .headline h1 {
+        font-size: 3.0rem;
+    }
+
+    .paragraph {
+        max-width: 90%;
+    }
+
+    .sign-up {
+        margin-top: 50px;
+    }
+
+    .schedule, .preview {
+        padding-left: 35px;
+        padding-right: 35px;
+        font-size: 1.1rem;
+        width: 30%;
+    }
+
+    .schedule {
+        font-size: 0.8rem;
+    }
+
+    .hide-element, #mobile-menu {
+        border: 0;
+        width: 500px;
+        height: 50px;
+        position: static;
+        clip: unset;
+        padding: 10px;
+        box-shadow: unset;
+        padding: 0;
+        margin-top: 10px;
+    }
+    .nav-icon {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        margin: 0;
+        background-color: unset;
+        font-size: 1.0rem;
+    }
+
+    .navigation li a {
+        padding: 0;
+    }
+    hr {
+        max-width: 1px;
+        height: 1px;
+        margin: 0;
+        padding: 0;
+    }
+}
